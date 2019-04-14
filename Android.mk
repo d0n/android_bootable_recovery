@@ -528,15 +528,15 @@ endif
 include $(BUILD_EXECUTABLE)
 
 # Symlink for file_contexts
-include $(CLEAR_VARS)
-
-LOCAL_MODULE := file_contexts_text
-LOCAL_MODULE_TAGS := optional
-LOCAL_REQUIRED_MODULES := file_contexts.bin
-LOCAL_POST_INSTALL_CMD := \
-    $(hide) cp -f $(PRODUCT_OUT)/obj/ETC/file_contexts.bin_intermediates/file_contexts.concat.tmp $(TARGET_RECOVERY_ROOT_OUT)/file_contexts
-
-include $(BUILD_PHONY_PACKAGE)
+#include $(CLEAR_VARS)
+#
+#LOCAL_MODULE := file_contexts_text
+#LOCAL_MODULE_TAGS := optional
+#LOCAL_REQUIRED_MODULES := file_contexts.bin
+#LOCAL_POST_INSTALL_CMD := \
+#    $(hide) cp -f $(PRODUCT_OUT)/obj/ETC/file_contexts.bin_intermediates/file_contexts.concat.tmp $(TARGET_RECOVERY_ROOT_OUT)/file_contexts
+#
+#include $(BUILD_PHONY_PACKAGE)
 
 ifneq ($(TW_USE_TOOLBOX), true)
 include $(CLEAR_VARS)

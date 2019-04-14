@@ -38,7 +38,8 @@ LOCAL_STATIC_LIBRARIES := \
 LOCAL_WHOLE_STATIC_LIBRARIES += libmtdutils
 LOCAL_CFLAGS := \
     -DZLIB_CONST \
-    -Werror
+    -Werror \
+    -Wno-unused-variable
 
 BOARD_RECOVERY_DEFINES := BOARD_BML_BOOT BOARD_BML_RECOVERY
 
@@ -92,7 +93,8 @@ LOCAL_STATIC_LIBRARIES := \
     libz
 LOCAL_CFLAGS := \
     -DZLIB_CONST \
-    -Werror
+    -Werror \
+    -Wno-unused-variable
 include $(BUILD_HOST_STATIC_LIBRARY)
 
 # libapplypatch_modes (static library)
@@ -107,7 +109,7 @@ LOCAL_STATIC_LIBRARIES := \
     libbase \
     libedify \
     libcrypto
-LOCAL_CFLAGS := -Werror
+LOCAL_CFLAGS := -Werror -Wno-unused-variable
 include $(BUILD_STATIC_LIBRARY)
 
 # applypatch (target executable)
@@ -137,7 +139,8 @@ libimgdiff_src_files := imgdiff.cpp
 # libbsdiff is compiled with -D_FILE_OFFSET_BITS=64.
 libimgdiff_cflags := \
     -Werror \
-    -D_FILE_OFFSET_BITS=64
+    -D_FILE_OFFSET_BITS=64 \
+    -Wno-unused-variable
 
 libimgdiff_static_libraries := \
     libbsdiff \
